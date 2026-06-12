@@ -43,8 +43,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-sm text-gray-400 leading-relaxed">
-              Long Island&apos;s tick control and Lyme disease information resource.
-              Powered by <strong className="text-gray-300">{BUSINESS_NAME}</strong> — locally owned, licensed, and serving Suffolk &amp; Nassau County.
+              Tick control and Lyme disease information for Long Island homeowners.
+              Pest control services provided by <strong className="text-gray-300">{BUSINESS_NAME}</strong> — locally owned, licensed &amp; insured, serving Suffolk &amp; Nassau County.
             </p>
             <div className="mt-4 space-y-2 text-sm">
               <a href={`tel:${BUSINESS_PHONE.replace(/\D/g, "")}`} className="flex items-center gap-2 hover:text-white">

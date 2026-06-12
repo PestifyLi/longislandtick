@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { LeadForm } from "@/components/forms/LeadForm";
 import {
-  Shield, Clock, CheckCircle, MapPin, Phone, Star,
+  Shield, Clock, CheckCircle, MapPin, Phone,
   AlertTriangle, ArrowRight, TreePine, Microscope, Calendar,
   Leaf, Bug, BookOpen, Home,
 } from "lucide-react";
@@ -88,7 +87,7 @@ const aboutCards = [
   { icon: MapPin,   title: "Built for Long Island",      desc: "Every guide, activity estimate, and service page is tailored to Suffolk County and Nassau County conditions.", green: false },
   { icon: Shield,   title: "Licensed & Fully Insured",   desc: "Pestify holds all required New York State pest control licenses and carries full liability and workers comp insurance.", green: false },
   { icon: BookOpen, title: "Educational First",          desc: "We educate first. Learn about tick activity, Lyme disease risk, and prevention — no pressure to book.", green: false },
-  { icon: TreePine, title: "North Shore Expertise",      desc: "We know Long Island's wooded terrain, deer corridors, and tick pressure areas better than any national company.", green: true  },
+  { icon: TreePine, title: "North Shore Expertise",      desc: "We understand Long Island's wooded terrain, deer activity, shaded yards, and seasonal tick pressure from working on local properties every day.", green: true  },
   { icon: Clock,    title: "Fast Scheduling Available",  desc: "When you're ready, most Long Island properties can be scheduled within the week. Request an estimate today.", green: false },
 ];
 
@@ -107,13 +106,12 @@ const riskColors: Record<string, string> = {
   high:     "bg-orange-100 text-orange-700",
 };
 
-const reviews = [
-  { name: "Karen S.",    town: "Stony Brook, NY",    service: "Tick Control Program",   text: "We live near wooded areas and the tick pressure was overwhelming every spring. Pestify treated our entire perimeter and we haven't had a tick issue since. Highly recommend for anyone on the North Shore." },
-  { name: "Mike T.",     town: "Smithtown, NY",      service: "Seasonal Program",        text: "Found multiple deer ticks on my kids in one weekend. Pestify came out within the week and walked me through exactly what they were treating and why. Made the yard safe again." },
-  { name: "Jennifer R.", town: "Huntington, NY",     service: "Tick & Mosquito Program", text: "My dog found a tick and I panicked. Pestify came out quickly, did a full yard treatment, and explained every step. Haven't found a tick on the dog or kids since." },
-  { name: "Tom B.",      town: "Babylon, NY",        service: "Tick Barrier Treatment",  text: "Our backyard backs up to a greenway. Tick problem was constant until Pestify treated the whole perimeter. Worth every penny." },
-  { name: "Lisa M.",     town: "Port Jefferson, NY", service: "Seasonal Tick Program",   text: "Very knowledgeable about North Shore conditions. They explained why our lot was worse than our neighbors' and adjusted the treatment accordingly. Great local company." },
-  { name: "Dave M.",     town: "Massapequa, NY",     service: "Tick Control",            text: "Professional and thorough. Showed up on time, explained what they found, treated everything. The yard was noticeably clearer within days of the first treatment." },
+const trustCards = [
+  { icon: Leaf,        label: "Locally Owned",                    sub: "Based in Port Jefferson Station, NY",       green: true  },
+  { icon: Shield,      label: "Licensed & Insured",               sub: "NYS pest control certified",                green: false },
+  { icon: MapPin,      label: "Serving Suffolk & Nassau",         sub: "Full Long Island coverage",                 green: false },
+  { icon: CheckCircle, label: "Powered by Pestify Pest Control",  sub: "Your local tick specialists",               green: false },
+  { icon: Bug,         label: "Seasonal Tick & Mosquito Programs",sub: "Coordinated yard protection programs",      green: true  },
 ];
 
 const learnLinks = [
@@ -145,18 +143,18 @@ export default function HomePage() {
               </div>
 
               <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
-                Long Island&apos;s Tick Control &amp;{" "}
-                <span className="text-brand-300">Lyme Disease</span> Resource
+                Long Island Tick Control &amp;{" "}
+                <span className="text-brand-300">Yard Protection</span>
               </h1>
 
               <p className="mt-5 text-lg text-brand-100 leading-relaxed max-w-lg">
-                Seasonal tick activity information for Suffolk &amp; Nassau County. Educational guides on Lyme disease and prevention. Professional tick control from Pestify — Long Island&apos;s locally owned pest specialists.
+                Seasonal tick and mosquito treatments for Suffolk and Nassau County homes, powered by Pestify Pest Control. Learn about local tick activity, prevention, and professional yard treatment options.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Button asChild variant="cta" size="xl">
                   <Link href="/free-estimate">
-                    Get a Free Estimate
+                    Get a Free Estimate from Pestify
                     <ArrowRight className="h-5 w-5" />
                   </Link>
                 </Button>
@@ -176,14 +174,9 @@ export default function HomePage() {
                 </a>
               </div>
 
-              <div className="mt-6 flex items-center gap-2">
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
+              <div className="mt-6">
                 <p className="text-xs text-brand-300">
-                  Trusted by Suffolk &amp; Nassau County homeowners · Pestify Pest Control
+                  Serving Suffolk &amp; Nassau County homeowners · Pestify Pest Control
                 </p>
               </div>
             </div>
@@ -452,36 +445,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── REVIEWS ── */}
+      {/* ── LOCAL TRUST ── */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-gray-900">
-              What Long Island Homeowners Are Saying
+              Local Tick Control Powered by Pestify
             </h2>
-            <p className="text-gray-500 text-sm mt-2">
-              Feedback from Suffolk and Nassau County customers of Pestify Pest Control.
+            <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
+              LongIslandTick.com is powered by Pestify Pest Control, a locally owned Long Island pest control company serving Suffolk County, Nassau County, and the Hamptons. This site is designed to help homeowners understand tick activity, prevention, and professional yard treatment options.
             </p>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {reviews.map((r) => (
-              <div key={r.name} className="rounded-xl border border-gray-200 bg-gray-50 p-6 flex flex-col">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <Badge variant="secondary" className="text-xs">{r.service}</Badge>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {trustCards.map(({ icon: Icon, label, sub, green }) => (
+              <div key={label} className={`rounded-xl border bg-white p-5 text-center hover:shadow-sm transition-all ${green ? "border-green-100 hover:border-green-200" : "border-gray-200 hover:border-brand-200"}`}>
+                <div className={`flex h-10 w-10 items-center justify-center rounded-full mx-auto mb-3 ${green ? "bg-green-50" : "bg-brand-50"}`}>
+                  <Icon className={`h-5 w-5 ${green ? "text-green-600" : "text-brand-600"}`} />
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-4">&ldquo;{r.text}&rdquo;</p>
-                <div className="border-t border-gray-200 pt-3 flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-gray-900 text-sm">{r.name}</p>
-                    <p className="text-gray-400 text-xs">{r.town}</p>
-                  </div>
-                  <span className="text-xs text-brand-600 font-medium">Pestify Customer</span>
-                </div>
+                <p className="font-semibold text-gray-900 text-sm">{label}</p>
+                <p className="text-xs text-gray-500 mt-1">{sub}</p>
               </div>
             ))}
           </div>
@@ -532,7 +514,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild variant="cta" size="xl">
-              <Link href="/free-estimate">Request a Free Estimate →</Link>
+              <Link href="/free-estimate">Get a Free Estimate from Pestify →</Link>
             </Button>
             <a
               href={`tel:${BUSINESS_PHONE.replace(/\D/g, "")}`}
