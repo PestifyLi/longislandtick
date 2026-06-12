@@ -199,7 +199,7 @@ export async function TickActivityMap() {
             Long Island Tick Activity Map
           </h2>
           <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
-            Explore estimated tick pressure across Suffolk County, Nassau County, and the East End based on seasonal activity, habitat, deer activity, and regional property conditions.
+            Estimated tick pressure across Long Island — updated daily using seasonal patterns, regional habitat risk, and weather conditions when available. Not a real-time scientific measurement.
           </p>
           <div className="mt-3 flex items-center justify-center gap-2 text-sm text-gray-400">
             <span className={`inline-block h-2 w-2 rounded-full ${fromDB ? "bg-green-400" : "bg-gray-300"}`} />

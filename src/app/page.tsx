@@ -12,9 +12,9 @@ import {
 import { BUSINESS_NAME, BUSINESS_PHONE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Long Island Tick Control & Lyme Disease Information | LongIslandTick.com",
+  title: "Long Island Tick Control & Yard Protection | LongIslandTick.com",
   description:
-    "Long Island's tick control and Lyme disease information resource. Seasonal activity estimates for Suffolk and Nassau County, prevention guides, and professional tick control by Pestify Pest Control.",
+    "Seasonal tick and mosquito treatments for Suffolk and Nassau County homes, powered by Pestify Pest Control. Tick activity index, prevention guides, and professional yard protection.",
   alternates: { canonical: "https://longislandtick.com" },
 };
 
@@ -29,7 +29,7 @@ const whyLI = [
   {
     icon: TreePine,
     title: "High Deer Tick Pressure",
-    desc: "Suffolk County consistently ranks among the highest counties in New York State for Lyme disease cases, driven by large white-tailed deer populations across wooded suburbs.",
+    desc: "Long Island has significant tick pressure because of its wooded suburbs, deer activity, coastal humidity, and long seasonal activity window — conditions that support large tick populations.",
     green: true,
   },
   {
@@ -40,14 +40,14 @@ const whyLI = [
   },
   {
     icon: Calendar,
-    title: "Year-Round Threat",
-    desc: "Unlike mosquitoes, deer ticks can be active whenever temperatures are above 40°F. That means tick risk on Long Island can extend from March through December in mild years.",
+    title: "Extended Active Season",
+    desc: "Unlike mosquitoes, deer ticks can be active whenever temperatures are above 40°F. Tick activity on Long Island can extend from March through December in mild years.",
     green: false,
   },
   {
     icon: Microscope,
-    title: "Serious Disease Risk",
-    desc: "Blacklegged ticks on Long Island carry Lyme disease, anaplasmosis, and babesiosis. Lone star ticks carry ehrlichiosis and STARI. Early prevention is the most effective strategy.",
+    title: "Year-Round Prevention Matters",
+    desc: "Blacklegged ticks on Long Island can carry Lyme disease, anaplasmosis, and babesiosis. Targeted barrier treatments reduce tick populations in and around your usable yard space.",
     green: false,
   },
 ];
@@ -160,7 +160,7 @@ export default function HomePage() {
                   </Link>
                 </Button>
                 <Button asChild size="xl" className="bg-white text-brand-800 hover:bg-brand-50 font-bold">
-                  <Link href="/lyme-disease-long-island">Learn About Lyme Disease →</Link>
+                  <Link href="/tick-control-long-island">View Our Programs →</Link>
                 </Button>
               </div>
 
@@ -216,14 +216,52 @@ export default function HomePage() {
       {/* ── TICK ACTIVITY MAP ── */}
       <TickActivityMap />
 
+      {/* ── SERVICES ── */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-2">Professional Tick Control</p>
+            <h2 className="text-3xl font-extrabold text-gray-900">
+              Yard Protection for Long Island Homeowners
+            </h2>
+            <p className="mt-2 text-gray-500">
+              {BUSINESS_NAME} — Licensed tick control specialists serving Suffolk &amp; Nassau County
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((s) => (
+              <Link key={s.title} href={s.href}>
+                <Card className="h-full hover:shadow-md hover:border-brand-200 transition-all cursor-pointer group">
+                  <CardContent className="pt-6">
+                    <div className={`flex h-11 w-11 items-center justify-center rounded-xl mb-4 transition-colors ${s.green ? "bg-green-50 group-hover:bg-green-100" : "bg-brand-50 group-hover:bg-brand-100"}`}>
+                      <s.icon className={`h-5 w-5 ${s.green ? "text-green-600" : "text-brand-600"}`} />
+                    </div>
+                    <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>
+                    <p className="text-sm text-gray-500">{s.desc}</p>
+                    <p className="mt-3 text-sm font-semibold text-brand-600 flex items-center gap-1">
+                      Learn more <ArrowRight className="h-3 w-3" />
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Button asChild variant="cta" size="lg">
+              <Link href="/free-estimate">Get a Free Estimate from Pestify →</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* ── ABOUT THIS SITE ── */}
-      <section className="py-14 bg-white border-b border-gray-100">
+      <section className="py-14 bg-gray-50 border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <p className="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-2">About This Site</p>
-            <h2 className="text-3xl font-extrabold text-gray-900">Pestify Pest Control Built This For You</h2>
+            <h2 className="text-3xl font-extrabold text-gray-900">Local Tick Control Powered by Pestify</h2>
             <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
-              LongIslandTick.com is created and maintained by Pestify — a locally owned pest control company based in Port Jefferson Station, NY. We built this resource so Long Island homeowners have accurate, local information about tick activity and Lyme disease risk before deciding if they need professional help.
+              LongIslandTick.com is powered by Pestify Pest Control, a locally owned Long Island pest control company serving Suffolk County, Nassau County, and the Hamptons. This site helps homeowners understand local tick activity, prevention, and professional yard treatment options.
             </p>
             <Link href="/about-pestify" className="inline-block mt-4 text-sm font-semibold text-brand-600 hover:underline">
               Learn more about Pestify →
@@ -251,10 +289,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-gray-900">
-              Why Long Island Has Such a Serious Tick Problem
+              Why Long Island Has Significant Tick Pressure
             </h2>
             <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
-              Geography, deer populations, and climate make Long Island one of the highest-risk areas for tick-borne disease in the country.
+              Long Island&apos;s wooded suburbs, active deer populations, coastal humidity, and extended seasons create conditions that support high tick activity across the region.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -273,7 +311,7 @@ export default function HomePage() {
           </div>
           <div className="mt-8 text-center">
             <Button asChild variant="outline">
-              <Link href="/lyme-disease-long-island">Learn About Lyme Disease Risk on Long Island →</Link>
+              <Link href="/tick-control-long-island">Learn About Tick Control on Long Island →</Link>
             </Button>
           </div>
         </div>
@@ -308,44 +346,6 @@ export default function HomePage() {
           <div className="mt-6 text-center">
             <Button asChild variant="outline">
               <Link href="/tick-season-long-island">Full Tick Season Guide →</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SERVICES ── */}
-      <section className="py-16 bg-gray-50 border-b border-gray-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <p className="text-sm font-semibold text-brand-600 uppercase tracking-widest mb-2">Professional Tick Control</p>
-            <h2 className="text-3xl font-extrabold text-gray-900">
-              Protection for Long Island Homeowners
-            </h2>
-            <p className="mt-2 text-gray-500">
-              {BUSINESS_NAME} — Licensed tick control specialists serving Suffolk &amp; Nassau County
-            </p>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((s) => (
-              <Link key={s.title} href={s.href}>
-                <Card className="h-full hover:shadow-md hover:border-brand-200 transition-all cursor-pointer group">
-                  <CardContent className="pt-6">
-                    <div className={`flex h-11 w-11 items-center justify-center rounded-xl mb-4 transition-colors ${s.green ? "bg-green-50 group-hover:bg-green-100" : "bg-brand-50 group-hover:bg-brand-100"}`}>
-                      <s.icon className={`h-5 w-5 ${s.green ? "text-green-600" : "text-brand-600"}`} />
-                    </div>
-                    <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>
-                    <p className="text-sm text-gray-500">{s.desc}</p>
-                    <p className="mt-3 text-sm font-semibold text-brand-600 flex items-center gap-1">
-                      Learn more <ArrowRight className="h-3 w-3" />
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Button asChild variant="cta" size="lg">
-              <Link href="/free-estimate">Request a Free Estimate from Pestify →</Link>
             </Button>
           </div>
         </div>
