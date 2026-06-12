@@ -1,0 +1,117 @@
+export const SITE_NAME     = "LongIslandTick.com";
+export const SITE_TAGLINE  = "Long Island's Tick Control & Lyme Disease Resource";
+export const BUSINESS_NAME = "Pestify Pest Control";
+export const BUSINESS_PHONE    = "(631) 681-5581";
+export const BUSINESS_EMAIL    = "info@pestifyli.com";
+export const BUSINESS_LOCATION = "Port Jefferson Station, NY";
+export const BUSINESS_URL      = "https://pestifyli.com";
+export const SITE_URL          = "https://longislandtick.com";
+
+export const SUFFOLK_TOWNS = [
+  "Smithtown",
+  "Huntington",
+  "Stony Brook",
+  "Port Jefferson",
+  "Setauket",
+  "Miller Place",
+  "Mount Sinai",
+  "Selden",
+  "Coram",
+  "Ronkonkoma",
+  "Islip",
+  "Babylon",
+  "Patchogue",
+  "Brentwood",
+  "Bay Shore",
+  "Commack",
+  "Hauppauge",
+  "Medford",
+  "Middle Island",
+  "Centereach",
+  "Lake Grove",
+  "St. James",
+  "Kings Park",
+  "Northport",
+  "Riverhead",
+  "Southampton",
+  "East Hampton",
+  "Bridgehampton",
+  "Westhampton",
+  "Center Moriches",
+  "Mastic Beach",
+  "Shirley",
+  "Ridge",
+  "Rocky Point",
+  "Shoreham",
+  "Wading River",
+  "Yaphank",
+  "Farmingville",
+  "Holtsville",
+  "Bohemia",
+  "Oakdale",
+  "Sayville",
+  "West Islip",
+  "Amityville",
+  "Lindenhurst",
+  "Deer Park",
+  "Dix Hills",
+];
+
+export const NASSAU_TOWNS = [
+  "Massapequa",
+  "Garden City",
+  "Great Neck",
+  "Manhasset",
+  "Oyster Bay",
+  "Hicksville",
+  "Levittown",
+  "Plainview",
+  "Syosset",
+  "Jericho",
+  "Bethpage",
+  "Mineola",
+  "Garden City Park",
+  "New Hyde Park",
+  "Floral Park",
+  "Elmont",
+  "Valley Stream",
+  "Lynbrook",
+  "Rockville Centre",
+  "Malverne",
+  "Baldwin",
+  "Freeport",
+  "Merrick",
+  "Bellmore",
+  "Wantagh",
+  "Seaford",
+  "Massapequa Park",
+  "Farmingdale",
+  "East Meadow",
+  "Westbury",
+  "Old Westbury",
+  "Brookville",
+  "Glen Cove",
+  "Sea Cliff",
+  "Glen Head",
+  "Roslyn",
+  "Port Washington",
+  "Oyster Bay Cove",
+];
+
+export const ALL_TOWNS = [...SUFFOLK_TOWNS, ...NASSAU_TOWNS];
+
+export const SERVICE_TYPES = [
+  "Tick Control",
+  "Tick & Mosquito Program",
+  "Seasonal Protection Plan",
+  "One-Time Tick Treatment",
+  "Free Estimate",
+  "Other",
+];
+
+export const CALLBACK_TIMES = [
+  "Morning (8am–12pm)",
+  "Afternoon (12pm–4pm)",
+  "Evening (4pm–7pm)",
+  "Anytime",
+];
