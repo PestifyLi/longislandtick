@@ -213,6 +213,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── TICK ACTIVITY MAP ── */}
+      <TickActivityMap />
+
       {/* ── ABOUT THIS SITE ── */}
       <section className="py-14 bg-white border-b border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -379,9 +382,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ── TICK ACTIVITY MAP ── */}
-      <TickActivityMap />
 
       {/* ── COUNTY COVERAGE ── */}
       <section className="py-14 bg-gray-900">
