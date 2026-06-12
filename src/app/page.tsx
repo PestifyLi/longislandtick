@@ -379,6 +379,185 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── TICK ACTIVITY MAP ── */}
+      <section className="py-16 bg-gray-50 border-b border-gray-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <span className="inline-block rounded-full bg-green-100 border border-green-200 px-3 py-1 text-xs font-semibold text-green-700 uppercase tracking-widest mb-3">
+              Seasonal Activity Index
+            </span>
+            <h2 className="text-3xl font-extrabold text-gray-900">
+              Long Island Tick Activity Map
+            </h2>
+            <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
+              Explore estimated tick pressure across Suffolk County, Nassau County, and the East End based on seasonal activity, habitat, deer activity, and common yard conditions.
+            </p>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                region:    "North Shore",
+                level:     "High",
+                levelColor:"text-orange-700 bg-orange-50 border-orange-200",
+                barColor:  "bg-orange-500",
+                barWidth:  "75%",
+                accent:    "border-orange-300",
+                dot:       "bg-orange-500",
+                factors:   ["Dense wooded corridors and deer paths", "Deep leaf litter in wooded backyards", "Shaded lots retain moisture — ideal for ticks", "Heavy deer activity through residential areas"],
+                riskZones: ["Property edges bordering woods", "Ornamental shrub beds", "Leaf litter accumulation zones"],
+                href:      "/tick-spraying-suffolk-county",
+                towns:     ["Smithtown","Huntington","Northport","Stony Brook","Port Jefferson","Setauket"],
+              },
+              {
+                region:    "East End / Hamptons",
+                level:     "Very High",
+                levelColor:"text-red-700 bg-red-50 border-red-200",
+                barColor:  "bg-red-500",
+                barWidth:  "95%",
+                accent:    "border-red-400",
+                dot:       "bg-red-500",
+                factors:   ["Among the highest Lyme disease rates in NY State", "Large white-tailed deer populations throughout", "Mix of wooded, grassy, and maritime habitats", "Lone star tick expanding range here"],
+                riskZones: ["Wooded property borders", "Lawn-to-woods transition zones", "Grassy areas near dune and coastal shrub"],
+                href:      "/tick-control-long-island",
+                towns:     ["Southampton","East Hampton","Bridgehampton","Sag Harbor","Montauk","Amagansett"],
+              },
+              {
+                region:    "Central Suffolk",
+                level:     "High",
+                levelColor:"text-orange-700 bg-orange-50 border-orange-200",
+                barColor:  "bg-orange-500",
+                barWidth:  "75%",
+                accent:    "border-orange-300",
+                dot:       "bg-orange-500",
+                factors:   ["Suburban lots adjacent to pine barrens and preserves", "Deer movement through neighborhoods", "Mix of wooded and open yard habitats", "Consistent deer tick pressure spring through fall"],
+                riskZones: ["Back edges of residential properties", "Mulch beds and groundcover areas", "Open lawn edges near wooded buffer"],
+                href:      "/tick-spraying-suffolk-county",
+                towns:     ["Commack","Hauppauge","Brentwood","Islip","Bay Shore","Sayville"],
+              },
+              {
+                region:    "South Shore",
+                level:     "Moderate – High",
+                levelColor:"text-yellow-700 bg-yellow-50 border-yellow-200",
+                barColor:  "bg-yellow-500",
+                barWidth:  "62%",
+                accent:    "border-yellow-300",
+                dot:       "bg-yellow-500",
+                factors:   ["Open and coastal habitats reduce wooded tick zones", "Tick activity concentrated near preserved land", "Dog tick pressure in grassy coastal areas", "Deer activity varies by proximity to wooded areas"],
+                riskZones: ["Grassy lawn edges near marsh or preserve", "Dog run and play areas", "Properties backing up to preserved land"],
+                href:      "/tick-spraying-suffolk-county",
+                towns:     ["Babylon","West Islip","Massapequa Park","Freeport","Wantagh","Seaford"],
+              },
+              {
+                region:    "North Fork",
+                level:     "High",
+                levelColor:"text-orange-700 bg-orange-50 border-orange-200",
+                barColor:  "bg-orange-500",
+                barWidth:  "75%",
+                accent:    "border-orange-300",
+                dot:       "bg-orange-500",
+                factors:   ["Agricultural and vineyard land adjacent to wooded edges", "High deer density in rural corridors", "Tick season extends due to mild maritime climate", "Less treatment history than suburban Suffolk"],
+                riskZones: ["Property edges near farmland or vineyard", "Grassy margins around structures", "Wooded windbreaks on rural lots"],
+                href:      "/tick-control-long-island",
+                towns:     ["Riverhead","Southold","Cutchogue","Mattituck","Greenport","Orient"],
+              },
+              {
+                region:    "Nassau County",
+                level:     "Moderate – High",
+                levelColor:"text-yellow-700 bg-yellow-50 border-yellow-200",
+                barColor:  "bg-yellow-500",
+                barWidth:  "60%",
+                accent:    "border-yellow-300",
+                dot:       "bg-yellow-500",
+                factors:   ["Oyster Bay and north shore communities have highest pressure", "Suburban lot sizes limit wooded harborage in many areas", "Tick pressure concentrated near greenways and preserves", "Dog tick more common in open South Shore areas"],
+                riskZones: ["Wooded greenway-adjacent properties", "Ornamental planting beds", "Properties near golf courses or parks"],
+                href:      "/tick-spraying-nassau-county",
+                towns:     ["Oyster Bay","Plainview","Syosset","Manhasset","Great Neck","Garden City"],
+              },
+            ].map((card) => (
+              <div key={card.region} className={`rounded-2xl border-2 ${card.accent} bg-white shadow-sm overflow-hidden flex flex-col`}>
+                <div className="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className={`h-2.5 w-2.5 rounded-full flex-shrink-0 ${card.dot}`} />
+                    <h3 className="font-extrabold text-gray-900">{card.region}</h3>
+                  </div>
+                  <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-bold ${card.levelColor}`}>
+                    {card.level}
+                  </span>
+                </div>
+                <div className="p-5 flex-1 flex flex-col">
+                  {/* Activity bar */}
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Estimated Tick Pressure</span>
+                    </div>
+                    <div className="h-2 w-full rounded-full bg-gray-100 overflow-hidden">
+                      <div className={`h-2 rounded-full ${card.barColor} transition-all`} style={{ width: card.barWidth }} />
+                    </div>
+                  </div>
+
+                  {/* Pressure factors */}
+                  <div className="mb-3">
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Pressure Factors</p>
+                    <ul className="space-y-1.5">
+                      {card.factors.map((f) => (
+                        <li key={f} className="flex items-start gap-2 text-xs text-gray-600">
+                          <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 flex-shrink-0" />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Risk zones */}
+                  <div className="mb-4 flex-1">
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Common Risk Areas</p>
+                    <div className="flex flex-wrap gap-1">
+                      {card.riskZones.map((z) => (
+                        <span key={z} className="rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-600">{z}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Towns */}
+                  <div className="mb-4">
+                    <div className="flex flex-wrap gap-1">
+                      {card.towns.map((t) => (
+                        <span key={t} className="rounded-full bg-green-50 border border-green-100 px-2 py-0.5 text-xs text-green-700">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <Link
+                    href={card.href}
+                    className="block text-center rounded-lg bg-brand-600 text-white text-xs font-semibold py-2 hover:bg-brand-700 transition-colors"
+                  >
+                    View {card.region} Tick Control →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom links + disclaimer */}
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button asChild variant="outline">
+              <Link href="/tick-season-long-island">Tick Season Guide →</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/tick-control-long-island">Long Island Tick Control →</Link>
+            </Button>
+            <Button asChild variant="cta">
+              <Link href="/free-estimate">Get a Free Estimate →</Link>
+            </Button>
+          </div>
+
+          <p className="mt-6 text-center text-xs text-gray-400 max-w-2xl mx-auto">
+            This activity map is an educational estimate, not a real-time scientific measurement. Tick activity can vary by property, weather, vegetation, wildlife activity, and season. Based on local habitat, seasonality, wooded areas, deer activity, and common tick hiding zones. For informational purposes only.
+          </p>
+        </div>
+      </section>
+
       {/* ── COUNTY COVERAGE ── */}
       <section className="py-14 bg-gray-900">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
