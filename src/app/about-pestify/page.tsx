@@ -68,7 +68,7 @@ export default function AboutPestifyPage() {
               Pestify Pest Control is a Long Island-based pest control company. We are locally owned and operated out of Port Jefferson Station in Suffolk County, and we specialize in protecting Long Island homeowners from tick and mosquito pressure throughout the season.
             </p>
             <p>
-              Long Island is one of the highest-risk areas in the country for tick-borne disease. The combination of large deer populations, wooded North Shore terrain, suburban development adjacent to natural areas, and a climate that allows year-round tick activity creates conditions that require a different approach than most national companies offer.
+              Long Island experiences significant tick pressure because of wooded neighborhoods, deer activity, coastal humidity, and a long seasonal activity window. Large deer populations, North Shore terrain, and suburban lots adjacent to natural areas create conditions that benefit from a locally focused approach to yard protection.
             </p>
             <p>
               We built LongIslandTick.com because we believe homeowners deserve access to accurate, local information about tick activity and Lyme disease risk — not just generic national content. When you understand why your specific neighborhood has higher pressure, what species are active, and what environmental factors matter, you make better decisions about protecting your family.
